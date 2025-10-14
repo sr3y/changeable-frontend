@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { use } from 'react';
@@ -52,13 +51,20 @@ export default function ReadChapterPage({ params }: { params: Promise<{ chapter:
       <main className="flex-1 flex flex-col items-center">
         {images.map((src, index) => (
           <div key={index} className="w-full flex justify-center">
-            <Image
+            {/* <Image
               src={src}
               alt={`Page ${index + 1}`}
               width={800}
               height={1200}
               className="w-full max-w-3xl object-contain select-none"
               priority={index === 0}
+            /> */}
+            <img
+              key={index}
+              src={src}
+              alt={`Page ${index + 1}`}
+              className="select-none max-w-full"
+              loading={index === 0 ? 'eager' : 'lazy'}
             />
           </div>
         ))}
