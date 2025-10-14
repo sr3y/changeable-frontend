@@ -4,12 +4,10 @@ import Image from "next/image";
 import { Upload, Link, Eye, Download, ArrowRight, BookOpen, Languages, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  const handleNavigate = (screen: string) => {
-    console.log(`Navigate to ${screen}`);
-    // Add your navigation logic here
-  };
+  const router = useRouter();
 
   return (
     <div className="min-h-screen">
@@ -24,7 +22,7 @@ export default function Home() {
           </div>
           <Button 
             variant="outline" 
-            onClick={() => handleNavigate('dashboard')}
+            onClick={() => router.push('/dashboard')}
             className="hidden sm:flex"
           >
             My Translations
@@ -57,7 +55,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg"
-                  onClick={() => handleNavigate('source')}
+                  onClick={() => router.push('/upload')}
                   className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 group text-white"
                 >
                   <Upload className="w-5 h-5 mr-2" />
@@ -67,7 +65,7 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => handleNavigate('source')}
+                  onClick={() => router.push('/upload')}
                   className="border-2 hover:bg-primary/5"
                 >
                   <Link className="w-5 h-5 mr-2" />
@@ -221,7 +219,7 @@ export default function Home() {
             <Button 
               size="lg"
               variant="secondary"
-              onClick={() => handleNavigate('source')}
+              onClick={() => router.push('/upload')}
               className="bg-white text-primary hover:bg-white/90"
             >
               <Upload className="w-5 h-5 mr-2" />
@@ -230,7 +228,7 @@ export default function Home() {
             <Button 
               size="lg"
               variant="secondary"
-              onClick={() => handleNavigate('dashboard')}
+              onClick={() => router.push('/dashboard')}
               className="border-2 border-white text-primary hover:bg-white/90"
             >
               View Dashboard
