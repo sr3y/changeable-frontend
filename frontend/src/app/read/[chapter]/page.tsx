@@ -3,17 +3,27 @@
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { use } from 'react';
+import { use, useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function ReadChapterPage({ params }: { params: Promise<{ chapter: string }> }) {
   const router = useRouter();
   const { chapter } = use(params);
+  const [pages, setPages] = useState([])
 
-  const images = [
-    'https://gg.asuracomic.net/storage/media/182960/conversions/02-optimized.webp',
-    'https://gg.asuracomic.net/storage/media/183029/conversions/03-optimized.webp',
-    'https://gg.asuracomic.net/storage/media/183096/conversions/04-optimized.webp',
-  ];
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000"}/raw`, {
+          link: chapter
+        });
+        setPages(res.data)
+      } catch (err) {
+        console.error('Failed to fetch pages', err)
+      }
+    } 
+    fetchPages();
+  }, [chapter])
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -49,16 +59,8 @@ export default function ReadChapterPage({ params }: { params: Promise<{ chapter:
 
       {/* Main reader */}
       <main className="flex-1 flex flex-col items-center">
-        {images.map((src, index) => (
+        {pages.map((src, index) => (
           <div key={index} className="w-full flex justify-center">
-            {/* <Image
-              src={src}
-              alt={`Page ${index + 1}`}
-              width={800}
-              height={1200}
-              className="w-full max-w-3xl object-contain select-none"
-              priority={index === 0}
-            /> */}
             <img
               key={index}
               src={src}

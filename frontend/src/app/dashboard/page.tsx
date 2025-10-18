@@ -46,62 +46,7 @@ export default function DashboardPage() {
       dateCreated: '2024-01-15',
       status: 'completed',
       size: '12.5 MB',
-    },
-    {
-      id: '2',
-      title: 'One Piece - Chapter 1100',
-      thumbnail:
-        'https://images.unsplash.com/photo-1620328038775-6e8c620277b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMGNvbWljJTIwYm9vayUyMHBhZ2VzfGVufDF8fHx8MTc1OTExMDIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-      pages: 17,
-      language: 'Japanese → Spanish',
-      dateCreated: '2024-01-12',
-      status: 'completed',
-      size: '8.2 MB',
-    },
-    {
-      id: '3',
-      title: 'Demon Slayer - Chapter 205',
-      thumbnail:
-        'https://images.unsplash.com/photo-1666153184621-bc6445e3568d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmltZSUyMHJlYWRpbmclMjBib29rc3xlbnwxfHx8fDE3NTkxMTI4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      pages: 20,
-      language: 'Japanese → French',
-      dateCreated: '2024-01-10',
-      status: 'processing',
-      size: '9.1 MB',
-    },
-    {
-      id: '4',
-      title: 'My Hero Academia - Chapter 410',
-      thumbnail:
-        'https://images.unsplash.com/photo-1705831156575-a5294d295a31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5nYSUyMGFuaW1lJTIwY2hhcmFjdGVyJTIwaWxsdXN0cmF0aW9ufGVufDF8fHx8MTc1OTExMjg4MHww&ixlib=rb-4.1.0&q=80&w=1080',
-      pages: 15,
-      language: 'Japanese → German',
-      dateCreated: '2024-01-08',
-      status: 'completed',
-      size: '6.8 MB',
-    },
-    {
-      id: '5',
-      title: 'Jujutsu Kaisen - Chapter 250',
-      thumbnail:
-        'https://images.unsplash.com/photo-1620328038775-6e8c620277b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMGNvbWljJTIwYm9vayUyMHBhZ2VzfGVufDF8fHx8MTc1OTExMDIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-      pages: 19,
-      language: 'Japanese → Portuguese',
-      dateCreated: '2024-01-05',
-      status: 'completed',
-      size: '7.9 MB',
-    },
-    {
-      id: '6',
-      title: 'Chainsaw Man - Chapter 150',
-      thumbnail:
-        'https://images.unsplash.com/photo-1666153184621-bc6445e3568d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmltZSUyMHJlYWRpbmclMjBib29rc3xlbnwxfHx8fDE3NTkxMTI4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      pages: 22,
-      language: 'Japanese → Italian',
-      dateCreated: '2024-01-03',
-      status: 'completed',
-      size: '10.3 MB',
-    },
+    }
   ];
 
   const filteredTranslations = translations.filter((t) => {
